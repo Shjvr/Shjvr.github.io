@@ -25,17 +25,17 @@
 </head>
 <body>
   <h1>URL Redirect</h1>
-  <form id="redirectForm" onsubmit="redirect()">
+  <form id="redirectForm" onsubmit="redirect(event)">
     <input type="text" id="urlInput" placeholder="Enter a URL">
     <br>
     <input type="submit" value="Go">
   </form>
 
   <script>
-    function redirect() {
+    function redirect(event) {
+      event.preventDefault();
       var url = document.getElementById("urlInput").value;
       window.location.href = url;
-      return false;
     }
   </script>
 </body>
